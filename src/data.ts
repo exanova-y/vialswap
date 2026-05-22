@@ -368,14 +368,14 @@ export const leaderboard: LeaderboardEntry[] = [
   { rank: 5, wallet: '0x7q8r...9s0t', label: 'gwern', pnl: 134500, trades: 723, elationPoints: 52300, favoriteVial: 'TC' },
   { rank: 6, wallet: '0x1u2v...3w4x', label: 'andinori', pnl: 112300, trades: 567, elationPoints: 52300, favoriteVial: 'TIRZ' },
   { rank: 7, wallet: '0x5y6z...7a8b', label: 'mathemaphysics', pnl: 98400, trades: 334, elationPoints: 44100, favoriteVial: 'EC' },
-  { rank: 8, wallet: '0x9c0d...1e2f', label: 'synecdochic', pnl: 87600, trades: 890, elationPoints: 38900, favoriteVial: 'TE' },
+  { rank: 8, wallet: '0x9c0d...1e2f', label: 'raw and feral', pnl: 87600, trades: 890, elationPoints: 38900, favoriteVial: 'TE' },
   { rank: 9, wallet: '0x3g4h...5i6j', label: 'vanessa', pnl: 72300, trades: 234, elationPoints: 31200, favoriteVial: 'PROG' },
   { rank: 10, wallet: '0x7k8l...9m0n', label: 'tyler', pnl: 65400, trades: 456, elationPoints: 28900, favoriteVial: 'EE' },
   { rank: 11, wallet: '0x1o2p...3q4r', label: 'lena', pnl: 54300, trades: 178, elationPoints: 18700, favoriteVial: 'NAD+' },
-  { rank: 12, wallet: '0x5s6t...7u8v', label: 'alex', pnl: 43200, trades: 312, elationPoints: 12400, favoriteVial: 'BPC' },
+  { rank: 12, wallet: '0x5s6t...7u8v', label: 'Maximum Epiplexity Reinforcement Learner', pnl: 43200, trades: 312, elationPoints: 12400, favoriteVial: 'BPC' },
   { rank: 13, wallet: '0x9w0x...1y2z', label: 'victoria', pnl: 32100, trades: 89, elationPoints: 8900, favoriteVial: 'DSIP' },
   { rank: 14, wallet: '0x3a4b...5c6d', label: 'janus', pnl: 23400, trades: 45, elationPoints: 3400, favoriteVial: 'NDM' },
-  { rank: 15, wallet: '0x7e8f...9g0h', label: 'eunoia', pnl: 12300, trades: 23, elationPoints: 2100, favoriteVial: 'GHK' },
+  { rank: 15, wallet: '0x7e8f...9g0h', label: 'sichu', pnl: 12300, trades: 23, elationPoints: 2100, favoriteVial: 'GHK' },
 ];
 
 export const stageColors: Record<string, string> = {

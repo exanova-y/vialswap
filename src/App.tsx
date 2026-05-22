@@ -35,7 +35,7 @@ export default function App() {
         fontFamily: 'var(--font-mono)',
         color: 'var(--text-muted)',
       }}>
-        vialswap · trade, earn, and own vials on the all-in-one multichain DEX · {new Date().getFullYear()}
+        vialswap {new Date().getFullYear()}
         <br />
         <span style={{ fontSize: '0.6rem', opacity: 0.6 }}>
           vials are not securities.
