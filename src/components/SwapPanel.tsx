@@ -46,7 +46,7 @@ export default function SwapPanel() {
   };
 
   const handleSwap = () => {
-    alert('🔮 Swap submitted! (This is a demo — no real vials were harmed)');
+    alert('Swap submitted! Vials will appear in your wallet shortly (just kidding)');
   };
 
   return (

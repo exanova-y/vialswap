@@ -33,7 +33,7 @@ export default function Explore() {
     const id = setInterval(() => {
       setHighlightId((prev) => pickRandom(prev));
       setShakeTick((t) => t + 1);
-    }, 2000);
+    }, 1000);
 
     return () => clearInterval(id);
   }, [filter]);
