@@ -5,7 +5,20 @@ import type { Stage } from '../types';
 
 const stages: (Stage | 'all')[] = ['all', 'pre-bonding', 'bonding', 'launched', 'graduated'];
 
+const slogans = [
+  'Trade, earn, and own vials on the all-in-one multichain DEX.',
+  'liquidity for your transition',
+  'hedge your HRT',
+  'estrogen on blockchain',
+  'decentralized girl juice',
+  'HRT on chain',
+  'vials not walls',
+  'be your own pharmacy',
+  'bonding curves',
+];
+
 export default function Explore() {
+  const [slogan] = useState(() => slogans[Math.floor(Math.random() * slogans.length)]);
   const [filter, setFilter] = useState<Stage | 'all'>('all');
   const [shakeTick, setShakeTick] = useState(0);
   const [highlightId, setHighlightId] = useState<string | null>(null);
@@ -43,7 +56,7 @@ export default function Explore() {
       <div className="hero">
         <h1>vialswap</h1>
         <p>
-          Trade, earn, and own vials on the all-in-one multichain DEX.
+          {slogan}
         </p>
         <span className="hero-tag">
           ✦ 420+ compounds ✦ 50+ chains ✦ grassroots-run
