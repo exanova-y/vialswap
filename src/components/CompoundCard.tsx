@@ -15,10 +15,15 @@ const compoundGradients: Record<string, string> = {
   'bpc-157': 'linear-gradient(135deg, #ec4899, #db2777)',
   'semaglutide': 'linear-gradient(135deg, #ef4444, #dc2626)',
   'tirzepatide': 'linear-gradient(135deg, #f97316, #ea580c)',
-  'nanodrop-melatonin': 'linear-gradient(135deg, #8b5cf6, #6d28d9)',
+  // 'nanodrop-melatonin': 'linear-gradient(135deg, #8b5cf6, #6d28d9)',
   'ghk-cu': 'linear-gradient(135deg, #14b8a6, #0d9488)',
   'spironolactone': 'linear-gradient(135deg, #64748b, #475569)',
   'bicalutamide': 'linear-gradient(135deg, #a855f7, #7e22ce)',
+  'wellbutrin': 'linear-gradient(135deg, #f43f5e, #be123c)',
+  'concerta/methylphenidate': 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+  'nac': 'linear-gradient(135deg, #10b981, #047857)',
+  'choline': 'linear-gradient(135deg, #38bdf8, #0284c7)',
+  'nicotine': 'linear-gradient(135deg, #facc15, #a16207)',
 };
 
 function formatCompact(n: number): string {
@@ -44,7 +49,7 @@ interface CompoundCardProps {
 
 export default function CompoundCard({ compound }: CompoundCardProps) {
   const [shaking, setShaking] = useState(false);
-  const { id, name, symbol, stage, location, holders, volume24h, price, bondingProgress, funding, fundingTarget, elationPoints, priceChange24h, marketCap } = compound;
+  const { id, name, symbol, description, stage, location, holders, volume24h, price, bondingProgress, funding, fundingTarget, elationPoints, priceChange24h, marketCap } = compound;
 
   const handleShake = useCallback(() => {
     setShaking(true);
@@ -66,7 +71,8 @@ export default function CompoundCard({ compound }: CompoundCardProps) {
           </div>
           <div>
             <div className="compound-name">{name}</div>
-            <div className="compound-symbol">{symbol}</div>
+            {/* <div className="compound-symbol">{symbol}</div> */}
+            <div className="compound-formula">{description}</div>
           </div>
         </div>
         <span

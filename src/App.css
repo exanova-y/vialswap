@@ -324,6 +324,15 @@
   text-transform: uppercase;
 }
 
+.compound-formula {
+  margin-top: 2px;
+  font-size: 0.72rem;
+  color: var(--purple);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+
 .stage-badge {
   font-size: 0.6rem;
   font-family: var(--font-mono);
