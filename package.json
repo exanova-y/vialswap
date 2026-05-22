@@ -8,8 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "wrangler pages deploy dist --branch main",
-    "deploy:preview": "wrangler pages deploy dist --branch preview"
+    "deploy": "wrangler pages deploy dist --branch main --commit-dirty=true",
+    "deploy:preview": "wrangler pages deploy dist --branch preview --commit-dirty=true"
   },
   "dependencies": {
     "react": "^19.2.6",

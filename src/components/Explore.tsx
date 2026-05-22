@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { compounds } from '../data';
 import CompoundCard from './CompoundCard';
 import type { Stage } from '../types';
@@ -7,10 +7,36 @@ const stages: (Stage | 'all')[] = ['all', 'pre-bonding', 'bonding', 'launched', 
 
 export default function Explore() {
   const [filter, setFilter] = useState<Stage | 'all'>('all');
+  const [shakeTick, setShakeTick] = useState(0);
+  const [highlightId, setHighlightId] = useState<string | null>(null);
 
   const filtered = filter === 'all'
     ? compounds
     : compounds.filter((c) => c.stage === filter);
+
+  useEffect(() => {
+    const pickRandom = (prev: string | null) => {
+      const pool = filter === 'all'
+        ? compounds
+        : compounds.filter((c) => c.stage === filter);
+      if (pool.length === 0) return null;
+      if (pool.length === 1) return pool[0].id;
+      let next = pool[Math.floor(Math.random() * pool.length)].id;
+      while (next === prev) {
+        next = pool[Math.floor(Math.random() * pool.length)].id;
+      }
+      return next;
+    };
+
+    setHighlightId((prev) => pickRandom(prev));
+
+    const id = setInterval(() => {
+      setHighlightId((prev) => pickRandom(prev));
+      setShakeTick((t) => t + 1);
+    }, 2000);
+
+    return () => clearInterval(id);
+  }, [filter]);
 
   return (
     <div className="tab-content">
@@ -20,7 +46,7 @@ export default function Explore() {
           Trade, earn, and own vials on the all-in-one multichain DEX.
         </p>
         <span className="hero-tag">
-          ✦ 420+ compounds ✦ 69 chains ✦ full degen
+          ✦ 420+ compounds ✦ 50+ chains ✦ grassroots-run
         </span>
       </div>
 
@@ -73,7 +99,12 @@ export default function Explore() {
 
       <div className="compound-grid">
         {filtered.map((compound) => (
-          <CompoundCard key={compound.id} compound={compound} />
+          <CompoundCard
+            key={compound.id}
+            compound={compound}
+            forceShake={highlightId === compound.id ? shakeTick : undefined}
+            highlighted={highlightId === compound.id}
+          />
         ))}
       </div>
     </div>

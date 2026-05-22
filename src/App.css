@@ -260,7 +260,8 @@
   overflow: hidden;
 }
 
-.compound-card:hover {
+.compound-card:hover,
+.compound-card.highlighted {
   border-color: var(--purple);
   background: var(--bg-card-hover);
   box-shadow: 0 0 30px var(--purple-glow);

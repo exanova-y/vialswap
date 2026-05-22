@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import type { Compound } from '../types';
 import { stageColors } from '../data';
 
@@ -45,21 +45,27 @@ function formatPrice(n: number): string {
 
 interface CompoundCardProps {
   compound: Compound;
+  forceShake?: number;
+  highlighted?: boolean;
 }
 
-export default function CompoundCard({ compound }: CompoundCardProps) {
+export default function CompoundCard({ compound, forceShake, highlighted }: CompoundCardProps) {
   const [shaking, setShaking] = useState(false);
   const { id, name, symbol, description, stage, location, holders, volume24h, price, bondingProgress, funding, fundingTarget, elationPoints, priceChange24h, marketCap } = compound;
 
-  const handleShake = useCallback(() => {
+  const triggerShake = useCallback(() => {
     setShaking(true);
     setTimeout(() => setShaking(false), 500);
   }, []);
 
+  useEffect(() => {
+    if (forceShake) triggerShake();
+  }, [forceShake, triggerShake]);
+
   return (
     <div
-      className={`compound-card ${shaking ? 'shake' : ''}`}
-      onClick={handleShake}
+      className={`compound-card ${shaking ? 'shake' : ''} ${highlighted ? 'highlighted' : ''}`}
+      onClick={triggerShake}
     >
       <div className="compound-card-header">
         <div className="compound-name-group">
