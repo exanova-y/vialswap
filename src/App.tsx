@@ -38,7 +38,7 @@ export default function App() {
         vialswap {new Date().getFullYear()}
         <br />
         <span style={{ fontSize: '0.6rem', opacity: 0.6 }}>
-          vials are not securities.
+
         </span>
       </footer>
     </div>
