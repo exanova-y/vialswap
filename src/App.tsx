@@ -38,7 +38,7 @@ export default function App() {
         vialswap · trade, earn, and own vials on the all-in-one multichain DEX · {new Date().getFullYear()}
         <br />
         <span style={{ fontSize: '0.6rem', opacity: 0.6 }}>
-          nothing on this site is financial advice. vials are not securities. probably. dyor.
+          vials are not securities.
         </span>
       </footer>
     </div>

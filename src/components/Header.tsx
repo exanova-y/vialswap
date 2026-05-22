@@ -25,11 +25,8 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
             <rect x="28" y="46" width="8" height="4" rx="1" fill="#22c55e" opacity="0.5"/>
             <circle cx="32" cy="24" r="4" fill="#0a0a0f" opacity="0.4"/>
           </svg>
-          <span className="header-title">vialswap</span>
+          {/* <span className="header-title">vialswap</span> */}
         </a>
-        <div className="header-slogan">
-          Trade, earn, and own vials on the all-in-one multichain DEX.
-        </div>
       </div>
 
       <div className="header-nav">
